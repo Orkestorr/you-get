@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-
 PROJ_NAME = 'you-get'
 PACKAGE_NAME = 'you_get'
+print('odhfsldhlsfkjdlfjsd')
 
 PROJ_METADATA = '%s.json' % PROJ_NAME
 
 import importlib.util
 import importlib.machinery
-
 def load_source(modname, filename):
     loader = importlib.machinery.SourceFileLoader(modname, filename)
     spec = importlib.util.spec_from_file_location(modname, filename, loader=loader)
@@ -17,7 +16,6 @@ def load_source(modname, filename):
     # sys.modules[module.__name__] = module
     loader.exec_module(module)
     return module
-
 import os, json
 here = os.path.abspath(os.path.dirname(__file__))
 proj_info = json.loads(open(os.path.join(here, PROJ_METADATA), encoding='utf-8').read())
